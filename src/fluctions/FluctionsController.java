@@ -3973,6 +3973,7 @@ public class FluctionsController implements Initializable {
       + "republished or distributed without the consent of \n"
       + "the author who contributed it.\n";
     JTextArea jta = new JTextArea(txt, 50, 50);
+    jta.setEditable(false);
     JScrollPane jsp = new JScrollPane(jta);
     jf.getContentPane().add(jsp);
     jf.setSize(500, 500);
