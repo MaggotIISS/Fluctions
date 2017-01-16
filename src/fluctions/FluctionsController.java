@@ -283,8 +283,10 @@ public class FluctionsController implements Initializable {
       "QREBS-Burden - 194",
       "QREBS-Safety - 194",
       "QREBS-TrueAge - 195",
-      "QREBS-Scenes - 195"
-    //</editor-fold>
+      //</editor-fold>
+      "QREBS-Scenes - 196",
+      "The Sense Actions - 198",
+      "Sense Benchmarks - 199"
     );
     cb4tables
       .setValue(cb4tables.getItems().get(cb4tables.getItems().size() - 1));
@@ -394,7 +396,7 @@ public class FluctionsController implements Initializable {
     //</editor-fold>
     old = tables;
     switch (cb4tables.getValue()) {
-      //<editor-fold defaultstate="collapsed" desc="cb4tables">
+//<editor-fold defaultstate="collapsed" desc="cb4tables">
       case "Important Eras In History - 17": {
         tables = new String[][]{
           {"Grandfather’s Children", "Droyne", "300,000 BCE", ""},
@@ -3876,19 +3878,98 @@ public class FluctionsController implements Initializable {
         };
         break;
       }
-      case "QREBS-Scenes - 195": {
+      case "QREBS-Scenes - 196": {
         tables = new String[][]{
           {"Scene = Flux + Mods"},
           {"Ergonomics", "Ship Ergonomics", "qrEbs"},
           {"Environment", "vs. normal"},
           {"Situation", "Surprise/confusion"},
           {"Scene roll < 0", "Potential failure if qRebs < Flux"},
-          {"Warnings for qRebs x 0.5 h"}
+          {"Warnings for qRebs x 0.5 h"},
+          {"Dangerous ?", "May cause injury on qrebS < Flux"},
+          {"Destructive ?", "May destroy part of device on qrebS < Flux"}
         };
         break;
       }
       //</editor-fold>
 ////////////////////////////////////////////////////////////////////////////////
+      case "The Sense Actions - 198": {
+        tables = new String[][]{
+          {cb4tables.getValue().toUpperCase()},
+          {"V=Vision", "Human Constant 16"},
+          {"V", "-", "Constant", "Band1", "Band2", "Band3"},
+          {"Human", " = ", "16", "R", "G", "B"},
+          {"Vargr", " = ", "20", "R", "x", "B"},
+          {"Aslan", " = ", "16", "R", "G", "B"},
+          {"Droyne", " = ", "16", "B", "P", "S"},
+          {"K`kree", " = ", "14", "B", "P", "S"},
+          {"Hiver", " = ", "16", "C", "R", "G"},
+          {""},
+          {"H=Hearing", "Human Constant 16"},
+          {"H", "-", "Constant", "-", "Frequency", "Span", "Voice", "Range"},
+          {"Human", " = ", "16", "-", "9", "3", "8/9", "2"},
+          {"Vargr", " = ", "18", "-", "9", "4", "7", "1"},
+          {"Aslan", " = ", "18", "-", "8", "4", "7", "4"},
+          {"Droyne", " = ", "16", "-", "0", "0", "0", "0"},
+          {"K`kree", " = ", "12", "-", "9", "1", "9", "2"},
+          {"Hiver", " = ", "16", "-", "9", "4", "0", "0"},
+          {""},
+          {"S=Smell", "Human Constant 10"},
+          {"S", "-", "Constant", "-", "Sharpness"},
+          {"Human", " = ", "10", "-", "2"},
+          {"Vargr", " = ", "20", "-", "4"},
+          {"Aslan", " = ", "18", "-", "3"},
+          {"Droyne", " = ", "16", "-", "0"},
+          {"K`kree", " = ", "16", "-", "4"},
+          {"Hiver", " = ", "12", "-", "2"},
+          {""},
+          {"T=Touch", "Human Constant 6"},
+          {"T", "-", "Constant", "-", "Sensitivity"},
+          {"Human", " = ", "6", "-", "2"},
+          {"Vargr", " = ", "14", "-", "3"},
+          {"Aslan", " = ", "12", "-", "3"},
+          {"Droyne", " = ", "16", "-", "0"},
+          {"K`kree", " = ", "8", "-", "3"},
+          {"Hiver", " = ", "24", "-", "6"},
+          {""},
+          {"A=Awareness", "Human Constant 0"},
+          {"A", "-", "Constant", "-", "Acuity"},
+          {"Human", " = ", "0", "-", "0"},
+          {"Vargr", " = ", "0", "-", "0"},
+          {"Aslan", " = ", "0", "-", "0"},
+          {"Droyne", " = ", "0", "-", "0"},
+          {"K`kree", " = ", "0", "-", "0"},
+          {"Hiver", " = ", "20", "-", "5"},
+          {""},
+          {"P=Perception", "Human Constant X"},
+          {"P", "-", "Constant", "-", "Tone", "PVoice"},
+          {"Human", " = ", "0", "-", "0", "0"},
+          {"Vargr", " = ", "0", "-", "0", "0"},
+          {"Aslan", " = ", "0", "-", "0", "0"},
+          {"Droyne", " = ", "0", "-", "0", "0"},
+          {"K`kree", " = ", "0", "-", "0", "0"},
+          {"Hiver", " = ", "0", "-", "0", "0"},
+          {""},
+          {"Range", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"},
+          {"Distance", "Contact", "VShort", "Short", "Medium", "Long", "VLong", "Distant", "VDistant", "Orbit", "Far Orbit"},
+          {"Distance", "", "5m", "50m", "150m", "500m", "1000m", "5000m", "50km", "500km", "5000km"},
+          {""},
+          {"TO NOTICE <Sense> nD(Range) < Constant + Benchmark + Mod + Mod"},
+          {""}
+        };
+        break;
+      }
+
+      case "Sense Benchmarks - 199": {
+        tables = new String[][]{
+          {cb4tables.getValue().toUpperCase()},
+          {"Range","0","R","T","1","2","3","4","5","6","7"},
+          {"Description","Contact","Reading","Talking","VShort","Short","Medium","Long","VLong","Distant","VDistant"},
+          {"Distance","","","","5m","50m","150m","500m","1000m","5km","50km"},
+        };
+        break;
+      }
+
       default: {
         //<editor-fold defaultstate="collapsed" desc="JOP">
         {
@@ -3924,7 +4005,7 @@ public class FluctionsController implements Initializable {
       for (int j = 0; j < tables[i].length; j++) {
         ta4tables.appendText(tables[i][j]);
         if (j < tables[i].length - 1) {
-          ta4tables.appendText(",\t");
+          ta4tables.appendText("\t");
         }
       }
       ta4tables.appendText(CRLF);
